@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 시작 홈페이지</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 검색 섹션 -->
+        <div class="search-section">
+            <div class="logo">
+                <span class="g1">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span class="l">l</span><span class="e">e</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="검색어를 입력하세요" id="searchInput">
+                <button onclick="search()">Google 검색</button>
+                <button onclick="feeling()">I'm Feeling Lucky</button>
+            </div>
+        </div>
+
+        <!-- 카드 영역 -->
+        <div class="cards-grid">
+            <!-- 시간/습도 카드 -->
+            <div class="card time-card">
+                <div class="card-title">현재 시간</div>
+                <div class="time-display" id="time">12:19:57</div>
+                <div class="date-display" id="dateInfo">2026년 10월 29일 목요일</div>
+                <div class="humidity" id="humidity">습도: --</div>
+            </div>
+
+            <!-- 날씨 카드 -->
+            <div class="card weather-card">
+                <div class="card-title">
+                    <span id="weatherLocation">서울</span>
+                </div>
+                <div class="temperature" id="temperature">22°C</div>
+                <div class="weather-details" id="weatherDetails">
+                    <div>날씨: --</div>
+                    <div>습도: --</div>
+                </div>
+            </div>
+
+            <!-- 뉴스 카드 -->
+            <div class="card news-card">
+                <div class="card-title">최신 뉴스</div>
+                <div id="newsList" class="news-list">
+                    <div class="loading">뉴스 로딩 중...</div>
+                </div>
+            </div>
+
+            <!-- 오늘의 일정 카드 -->
+            <div class="card schedule-card">
+                <div class="card-title">오늘의 일정</div>
+                <div class="schedule-content">
+                    <p>추가된 일정이 없습니다</p>
+                    <input type="text" placeholder="일정 추가" id="scheduleInput">
+                    <button onclick="addSchedule()">추가</button>
+                </div>
+                <div id="scheduleList" class="schedule-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

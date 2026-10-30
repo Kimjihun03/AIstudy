@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    padding: 40px 20px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 검색 섹션 */
+.search-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 92px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    display: inline-block;
+}
+
+.logo .g1 {
+    color: #4285f4;
+}
+
+.logo .o1 {
+    color: #ea4335;
+}
+
+.logo .o2 {
+    color: #fbbc04;
+}
+
+.logo .g2 {
+    color: #4285f4;
+}
+
+.logo .l {
+    color: #ea4335;
+}
+
+.logo .e {
+    color: #34a853;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.search-box input {
+    width: 400px;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+.search-box input:hover {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input:focus {
+    outline: none;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    border-color: transparent;
+}
+
+.search-box button {
+    padding: 10px 24px;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.search-box button:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+}
+
+.search-box button:active {
+    border: 1px solid #4285f4;
+}
+
+/* 카드 그리드 */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+/* 카드 스타일 */
+.card {
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #888;
+    position: relative;
+    padding-left: 12px;
+}
+
+.card-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #d32f2f;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.time-card .card-title::before {
+    background-color: #f39c12;
+}
+
+.weather-card .card-title::before {
+    background-color: #3498db;
+}
+
+.news-card .card-title::before {
+    background-color: #e74c3c;
+}
+
+.schedule-card .card-title::before {
+    background-color: #1abc9c;
+}
+
+.icon {
+    display: none;
+}
+
+/* 시간 카드 */
+.time-card {
+    background-color: #fef5e7;
+    border-left: 4px solid #f39c12;
+}
+
+.time-card .card-title {
+    color: #b8860b;
+}
+
+.time-display {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin: 12px 0;
+}
+
+.date-display {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.humidity {
+    font-size: 13px;
+    color: #777;
+}
+
+/* 날씨 카드 */
+.weather-card {
+    background-color: #e8f4f8;
+    border-left: 4px solid #3498db;
+}
+
+.weather-card .card-title {
+    color: #0066cc;
+}
+
+.temperature {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin: 12px 0;
+}
+
+.weather-details {
+    font-size: 13px;
+    color: #555;
+}
+
+.weather-details div {
+    margin: 5px 0;
+}
+
+/* 뉴스 카드 */
+.news-card {
+    background-color: #fdeae8;
+    border-left: 4px solid #e74c3c;
+}
+
+.news-card .card-title {
+    color: #cc3333;
+}
+
+.news-list {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.news-item {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item-title {
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 1.4;
+    color: #1a1a1a;
+}
+
+.news-item-source {
+    font-size: 12px;
+    color: #888;
+}
+
+/* 일정 카드 */
+.schedule-card {
+    background-color: #e8f8f5;
+    border-left: 4px solid #1abc9c;
+}
+
+.schedule-card .card-title {
+    color: #009980;
+}
+
+.schedule-content {
+    margin-bottom: 16px;
+}
+
+.schedule-content p {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.schedule-content input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.schedule-content input::placeholder {
+    color: #aaa;
+}
+
+.schedule-content input:focus {
+    outline: none;
+    border-color: #1abc9c;
+}
+
+.schedule-content button {
+    padding: 8px 16px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.schedule-content button:hover {
+    background-color: #16a085;
+}
+
+.schedule-list {
+    margin-top: 12px;
+}
+
+.schedule-item {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+
+.schedule-item button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.schedule-item button:hover {
+    background-color: #c0392b;
+}
+
+.loading {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+    font-size: 13px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .search-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-box input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 70px;
+    }
+
+    .time-display,
+    .temperature {
+        font-size: 36px;
+    }
+}

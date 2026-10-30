@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>할 일 관리</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1>할 일 관리</h1>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <section class="progress-section">
+          <h2 class="section-title">진행률</h2>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <div class="progress-text">
+            <span class="progress-count">0/0</span>
+            <span class="progress-separator">·</span>
+            <span class="progress-percent">0%</span>
+          </div>
+        </section>
+
+        <section class="filter-section">
+          <h2 class="section-title">카테고리</h2>
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all" aria-label="모든 항목 표시">전체</button>
+            <button class="filter-tab" data-filter="work" aria-label="업무 항목만 표시">업무</button>
+            <button class="filter-tab" data-filter="personal" aria-label="개인 항목만 표시">개인</button>
+            <button class="filter-tab" data-filter="study" aria-label="공부 항목만 표시">공부</button>
+          </div>
+          <button id="clearCompletedBtn" class="clear-completed-btn" aria-label="완료된 항목 모두 삭제">완료된 항목 삭제</button>
+        </section>
+      </aside>
+
+      <main class="main">
+        <section class="input-section">
+          <div class="input-group">
+            <input
+              type="text"
+              id="todoInput"
+              class="todo-input"
+              placeholder="할 일을 입력하세요"
+              maxlength="100"
+            >
+            <select id="categorySelect" class="category-select personal" aria-label="카테고리 선택">
+              <option value="personal">개인</option>
+              <option value="work">업무</option>
+              <option value="study">공부</option>
+            </select>
+            <button id="addBtn" class="add-btn" aria-label="할 일 추가">추가</button>
+          </div>
+        </section>
+
+        <section class="list-section">
+          <ul id="todoList" class="todo-list"></ul>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
